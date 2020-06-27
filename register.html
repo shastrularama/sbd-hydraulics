@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Telugu Bharathi</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" /> </head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top" style="background-color: #133e5e;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo_png.png" alt="thumbnail" class="img-thumbnail" style="width: 100px"> </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="howitworks.html">How to works?</a>
+          </li>
+                    <li class="nav-item">
+            <a class="nav-link" href="register.html">Register Online</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faqs.html">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Admissions
+      <small>are now open!</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Register</li>
+    </ol>
+
+    <!-- Intro Content -->
+    <div class="row">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-4" src="images/logo_png-s.png" alt="Telugu Bharathi logo">
+      </div>
+      <div class="col-lg-6">
+        <h2>Register your kid Online</h2>
+        <p>Admissions are now open for 2020-2021 academic year. Admission fee is $150, this includes one time annual fee for all three terms.
+        </p>
+        <p>Receive an additional $30 discount by entering coupon OFF30 during checkout, offer valid until 15th August 2020.
+        </p>
+        <p>
+
+
+
+
+
+
+
+
+
+
+
+     
+        
+        
+        
+        
+        
+        
+          <!-- Load Stripe.js on your website. -->
+          <script src="https://js.stripe.com/v3"></script>
+
+          <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+          <button
+            style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+            id="checkout-button-price_1GyX0FIncleR58bgswFG46Qh"
+            role="link"
+          >
+            Register
+          </button>
+          
+          <div id="error-message"></div>
+          
+          <script>
+          (function() {
+            var stripe = Stripe('pk_test_uPks9V6clqwOi8rgtks1IR2q00elm85Yo0');
+          
+            var checkoutButton = document.getElementById('checkout-button-price_1GyX0FIncleR58bgswFG46Qh');
+            checkoutButton.addEventListener('click', function () {
+              // When the customer clicks on the button, redirect
+              // them to Checkout.
+              stripe.redirectToCheckout({
+                lineItems: [{price: 'price_1GyX0FIncleR58bgswFG46Qh', quantity: 1}],
+                mode: 'payment',
+                // Do not rely on the redirect to the successUrl for fulfilling
+                // purchases, customers may not always reach the success_url after
+                // a successful payment.
+                // Instead use one of the strategies described in
+                // https://stripe.com/docs/payments/checkout/fulfillment
+                successUrl: 'http://telugubharathi.com/success',
+                cancelUrl: 'http://telugubharathi.com/canceled',
+              })
+              .then(function (result) {
+                if (result.error) {
+                  // If `redirectToCheckout` fails due to a browser or network
+                  // error, display the localized error message to your customer.
+                  var displayError = document.getElementById('error-message');
+                  displayError.textContent = result.error.message;
+                }
+              });
+            });
+          })();
+          </script>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </p>
+        
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5" style="background-color: #133e5e;">
+    <div class="container">
+<p class="m-0 text-center text-white">Copyright &copy; Telugu Bharathi <script>document.write( new Date().getFullYear() );</script></p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
